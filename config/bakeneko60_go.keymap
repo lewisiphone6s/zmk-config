@@ -10,29 +10,6 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    macros {
-        win_slideleft: win_slideleft {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_WIN &kp LEFT_ARROW>;
-            label = "WIN_SLIDELEFT";
-        };
-
-        win_slideright: win_slideright {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_WIN &kp RIGHT_ARROW>;
-            label = "WIN_SLIDERIGHT";
-        };
-
-        task_manager: task_manager {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_ALT &kp DELETE>;
-            label = "TASK_MANAGER";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -64,11 +41,11 @@
             // ------------------------------------------------------------------------------------------------
 
             bindings = <
-&kp GRAVE      &kp F1          &kp F2           &kp F3           &kp F4           &kp F5           &kp F6           &kp F7  &kp F8  &kp F9  &kp F10         &kp F11            &kp F12          &trans  &kp DEL
-&bt BT_CLR     &none           &none            &none            &none            &none            &none            &none   &trans  &none   &kp C_MUTE      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP          &kp C_PLAY_PAUSE
-&bt BT_SEL 1   &none           &none            &none            &none            &none            &none            &none   &none   &none   &none           &trans                                      &bootloader
-&bt BT_SEL 2                   &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &none            &none   &none   &none   &none           &kp UP_ARROW       &trans                   &trans
-&task_manager  &win_slideleft                   &win_slideright                                    &rgb_ug RGB_TOG                          &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT_ARROW          &none
+&kp GRAVE           &kp F1                  &kp F2           &kp F3                   &kp F4           &kp F5           &kp F6           &kp F7  &kp F8  &kp F9  &kp F10         &kp F11            &kp F12          &trans  &kp DEL
+&bt BT_CLR          &none                   &none            &none                    &none            &none            &none            &none   &trans  &none   &kp C_MUTE      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP          &kp C_PLAY_PAUSE
+&bt BT_SEL 1        &none                   &none            &none                    &none            &none            &none            &none   &none   &none   &none           &trans                                      &bootloader
+&bt BT_SEL 2                                &rgb_ug RGB_BRD  &rgb_ug RGB_BRI          &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &none            &none   &none   &none   &none           &kp UP_ARROW       &trans                   &trans
+&kp LS(LA(DELETE))  &kp LG(LC(LEFT_ARROW))                   &kp LC(LG(RIGHT_ARROW))                                    &rgb_ug RGB_TOG                          &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT_ARROW          &none
             >;
         };
     };
